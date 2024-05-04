@@ -1,9 +1,9 @@
 "use client";
-import {
-  IDKitWidget,
-  VerificationLevel,
-  ISuccessResult,
-} from "@worldcoin/idkit";
+// import {
+//   IDKitWidget,
+//   VerificationLevel,
+//   ISuccessResult,
+// } from "@worldcoin/idkit";
 import { useCallback, useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -27,13 +27,13 @@ export default function SignUpPage() {
     // window.location.href = "/explore";
   }, []);
 
-  const onSuccess2 = (result: ISuccessResult) => {
-    // This is where you should perform frontend actions once a user has been verified
-    window.alert(
-      `Successfully verified with World ID!
-      Your nullifier hash is: ` + result.nullifier_hash
-    );
-  };
+  // const onSuccess2 = (result: ISuccessResult) => {
+  //   // This is where you should perform frontend actions once a user has been verified
+  //   window.alert(
+  //     `Successfully verified with World ID!
+  //     Your nullifier hash is: ` + result.nullifier_hash
+  //   );
+  // };
 
   return (
     <div className="w-full lg:grid lg:min-h-screen lg:grid-cols-2">
@@ -47,7 +47,7 @@ export default function SignUpPage() {
           </div>
           <div className="grid gap-4">
             <div className="grid gap-2 justify-center">
-              <IDKitWidget
+              {/* <IDKitWidget
                 app_id={`app_${process.env.NEXT_PUBLIC_APP_ID}`}
                 action={process.env.NEXT_PUBLIC_ACTION_ID || ""}
                 onSuccess={onSuccess2}
@@ -59,7 +59,7 @@ export default function SignUpPage() {
                     Verify with World ID
                   </Button>
                 )}
-              </IDKitWidget>
+              </IDKitWidget> */}
             </div>
           </div>
           <div className="mt-4 text-center text-sm">

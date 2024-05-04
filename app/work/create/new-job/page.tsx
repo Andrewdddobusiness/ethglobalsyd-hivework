@@ -23,11 +23,11 @@ import {
 
 import { Textarea } from "@/components/ui/textarea";
 
-import {
-  IDKitWidget,
-  VerificationLevel,
-  ISuccessResult,
-} from "@worldcoin/idkit";
+// import {
+//   IDKitWidget,
+//   VerificationLevel,
+//   ISuccessResult,
+// } from "@worldcoin/idkit";
 
 import handleVerifyExecute from "@/actions/verify-execute";
 
@@ -105,7 +105,7 @@ export default function CreateJobListing() {
     // window.location.href = "/explore";
   }, []);
 
-  const onSuccess2 = (result: ISuccessResult) => {
+  const onSuccess2 = (result: any) => {
     // This is where you should perform frontend actions once a user has been verified
     window.alert(
       `Successfully verified with World ID!
@@ -277,7 +277,7 @@ export default function CreateJobListing() {
                 Back
               </Link>
 
-              <IDKitWidget
+              {/* <IDKitWidget
                 app_id={`app_${process.env.NEXT_PUBLIC_APP_ID}`}
                 action={process.env.NEXT_PUBLIC_ACTION_ID || ""}
                 onSuccess={onSuccess2}
@@ -292,7 +292,7 @@ export default function CreateJobListing() {
                     Post Job
                   </Button>
                 )}
-              </IDKitWidget>
+              </IDKitWidget> */}
             </div>
           </div>
         </div>

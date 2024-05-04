@@ -1,4 +1,4 @@
-export default async function handleVerify(proof: ISuccessResult) {
+export default async function handleVerify(proof: any) {
   const res = await fetch("http://localhost:7071/api/verify", {
     method: "POST",
     headers: {
