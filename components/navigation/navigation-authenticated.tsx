@@ -151,7 +151,7 @@ export default function Navigation() {
                 <DropdownMenuItem>Settings</DropdownMenuItem>
               </Link>
               <DropdownMenuSeparator />
-              <Link href="/">
+              <Link href="/api/auth/logout">
                 <DropdownMenuItem>Logout</DropdownMenuItem>
               </Link>
             </DropdownMenuContent>

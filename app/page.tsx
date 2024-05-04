@@ -60,7 +60,8 @@ export default function Home() {
             <p className="text-lg mt-4 text-left">
               Discover Freelance Gigs at Hivework.
             </p>
-            <Link href="/sign-up">
+
+            <Link href="/api/auth/login">
               <Button className="mt-4 rounded-full">Get Started</Button>
             </Link>
           </motion.div>

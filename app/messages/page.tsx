@@ -114,7 +114,7 @@ export default function Messages() {
               <Button
                 type="submit"
                 size="sm"
-                className="ml-auto gap-1.5 bg-yellow-400 text-black"
+                className="ml-auto gap-1.5 bg-yellow-400 text-black hover:bg-yellow-300"
               >
                 Send Message
                 <CornerDownLeft className="size-3.5" />

@@ -1,5 +1,5 @@
 "use client";
-import { useState, FC } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import LayoutAuthenticated from "@/components/layouts/layout-authenticated";
@@ -8,14 +8,11 @@ import { Input } from "@/components/ui/input";
 import { Check, ChevronsUpDown } from "lucide-react";
 import {
   Command,
-  CommandDialog,
   CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
   CommandList,
-  CommandSeparator,
-  CommandShortcut,
 } from "@/components/ui/command";
 
 import {
@@ -25,6 +22,14 @@ import {
 } from "@/components/ui/popover";
 
 import { Textarea } from "@/components/ui/textarea";
+
+import {
+  IDKitWidget,
+  VerificationLevel,
+  ISuccessResult,
+} from "@worldcoin/idkit";
+
+import handleVerifyExecute from "@/actions/verify-execute";
 
 // Define a type for Combobox items
 interface ComboboxItem {
@@ -89,6 +94,24 @@ export default function CreateJobListing() {
   const [duration, setDuration] = useState<string>("");
   const [currency, setCurrency] = useState<string>("");
   const [budget, setBudget] = useState<number | "">("");
+
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
+  const onSuccess = useCallback(() => {
+    // window.location.href = "/explore";
+  }, []);
+
+  const onSuccess2 = (result: ISuccessResult) => {
+    // This is where you should perform frontend actions once a user has been verified
+    window.alert(
+      `Successfully verified with World ID!
+      Your nullifier hash is: ` + result.nullifier_hash
+    );
+  };
 
   const jobCategories: ComboboxItem[] = [
     { value: "development", label: "Development" },
@@ -254,12 +277,22 @@ export default function CreateJobListing() {
                 Back
               </Link>
 
-              <Button
-                onClick={handleSubmit}
-                className="bg-yellow-400 text-black rounded-full hover:bg-yellow-300"
+              <IDKitWidget
+                app_id={`app_${process.env.NEXT_PUBLIC_APP_ID}`}
+                action={process.env.NEXT_PUBLIC_ACTION_ID || ""}
+                onSuccess={onSuccess2}
+                handleVerify={handleVerifyExecute}
+                verification_level={VerificationLevel.Device}
               >
-                Post Job
-              </Button>
+                {({ open }: any) => (
+                  <Button
+                    onClick={open}
+                    className="bg-yellow-400 text-black rounded-full hover:bg-yellow-300"
+                  >
+                    Post Job
+                  </Button>
+                )}
+              </IDKitWidget>
             </div>
           </div>
         </div>

@@ -1,0 +1,16 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --outDir dist",
+    "start": "func start"
+  },
+  "dependencies": {
+    "@azure/functions": "^4.4.0",
+    "viem": "^2.9.31"
+  },
+  "main": "dist/src/functions/*.js",
+  "devDependencies": {}
+}
