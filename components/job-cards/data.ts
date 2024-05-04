@@ -7,6 +7,16 @@ export type TJobPosting = {
   skillsRequired: string[];
 };
 
+export type TJobListing = {
+  title: string;
+  category: string;
+  duration: string;
+  level: string;
+  description: string;
+  skills: string[];
+  budget: number;
+};
+
 export const jobPostingData: TJobPosting[] = [
   {
     posted: "Posted yesterday",
@@ -57,5 +67,28 @@ export const jobPostingData: TJobPosting[] = [
       "Content Creation",
       "Analytics",
     ],
+  },
+];
+
+export const jobListingsData: TJobListing[] = [
+  {
+    title: "Front-end developer needed for website redesign",
+    category: "Development",
+    duration: "3 months",
+    level: "Intermediate",
+    description:
+      "Design and implement responsive user interfaces using React, CSS, and JavaScript. Collaborate with backend developers to ensure seamless integration. The project involves building new features and enhancing existing ones.",
+    skills: ["React", "CSS", "JavaScript"],
+    budget: 40,
+  },
+  {
+    title: "Data analyst wanted for big data ingestion",
+    category: "Data Science",
+    duration: "6 months",
+    level: "Intermediate",
+    description:
+      "Analyze large datasets using Python and Pandas to generate insights for business decisions. Create visualizations and reports to communicate findings. The project requires cleaning and processing data to support data-driven strategies.",
+    skills: ["Python", "Pandas", "SQL"],
+    budget: 45,
   },
 ];

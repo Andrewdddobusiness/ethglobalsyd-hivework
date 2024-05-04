@@ -108,14 +108,14 @@ export default function Navigation() {
                     ))}
                   </ul>
                 </NavigationMenuContent>
-              </NavigationMenuItem>
+              </NavigationMenuItem> */}
               <NavigationMenuItem>
-                <Link href="/docs" legacyBehavior passHref>
+                <Link href="/work/create">
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Documentation
+                    Create work
                   </NavigationMenuLink>
                 </Link>
-              </NavigationMenuItem> */}
+              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
         </div>
